@@ -1,3 +1,4 @@
+// src\modules\auth\components\RegisterForm.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerRequest } from '../services/authService';
