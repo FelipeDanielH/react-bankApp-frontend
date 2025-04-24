@@ -1,13 +1,22 @@
+// src/modules/home/pages/HomePage.jsx
+import Hero from '../components/Hero';
+import About from '../components/About';
+import HowItWorks from '../components/HowItWorks';
+import Benefits from '../components/Benefits';
+import Team from '../components/Team';
+import ContactSection from '../components/ContactSection';
+
 const HomePage = () => {
-    return (
-      <div className="container py-5 text-center">
-        <h1 className="fw-bold mb-3" style={{ color: '#6f22d2' }}>
-          Bienvenido a BancoSimple
-        </h1>
-        <p className="lead">Tu banca digital simple, segura y efectiva.</p>
-      </div>
-    );
-  };
-  
-  export default HomePage;
-  
+  return (
+    <>
+      <Hero />
+      <About />
+      <HowItWorks />
+      <Benefits />
+      <Team />
+      <ContactSection />
+    </>
+  );
+};
+
+export default HomePage;

@@ -8,20 +8,23 @@ const NavbarPublic = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm fixed-top">
-      <div className="w-100 d-flex justify-content-between align-items-center px-4">
+    <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom shadow-sm">
+      <div className="container">
         <Link className="navbar-brand fw-bold" to="/" style={{ color: '#6f22d2' }}>
           BancoSimple
         </Link>
 
-        {/* Secciones visibles solo en home */}
         {isHome && (
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item"><a className="nav-link" href="#acerca">Acerca</a></li>
             <li className="nav-item"><a className="nav-link" href="#como-funciona">Cómo funciona</a></li>
             <li className="nav-item"><a className="nav-link" href="#beneficios">Beneficios</a></li>
+            <li className="nav-item"><a className="nav-link" href="#equipo">Equipo</a></li>
             <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
           </ul>
         )}
+
+
 
         <div className="d-flex gap-2">
           {!isAuthenticated && !isAuthPage ? (
