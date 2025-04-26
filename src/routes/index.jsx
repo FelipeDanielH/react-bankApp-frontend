@@ -4,7 +4,9 @@ import { useAuth } from '../modules/auth/hooks/useAuth';
 import LoginPage from '../modules/auth/pages/LoginPage';
 import RegisterPage from '../modules/auth/pages/RegisterPage';
 import MainLayout from '../components/MainLayout';
-import HomePage from '../modules/home/pages/HomePage'; 
+import HomePage from '../modules/home/pages/HomePage';
+import AppLayout from '../modules/app/layout/AppLayout';
+import DashboardPage from '../modules/dashboard/pages/DashboardPage';
 
 
 const PrivateRoute = ({ children }) => {
@@ -26,11 +28,11 @@ const AppRoutes = () => (
       path="/app"
       element={
         <PrivateRoute>
-          <MainLayout />
+          <AppLayout />
         </PrivateRoute>
       }
     >
-      {/* <Route index element={<DashboardPage />} /> */}
+      <Route index element={<DashboardPage />} />
     </Route>
 
     {/* Catch-all: redirige a home */}
