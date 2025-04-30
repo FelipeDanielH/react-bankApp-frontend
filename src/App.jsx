@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// src\App.jsx
 import  AppRoutes  from './routes';
 import { AuthProvider } from './modules/auth/context/AuthContext'
 

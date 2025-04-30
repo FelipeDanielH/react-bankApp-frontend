@@ -15,27 +15,44 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="d-flex flex-column p-3 bg-white border-end vh-100 shadow-sm" style={{ width: '240px' }}>
-      <Link to="/" className="mb-4 fs-4 fw-bold text-decoration-none" style={{ color: '#6f22d2' }}>
+    <aside
+      className="d-flex flex-column p-3 bg-white border-end h-100 shadow-sm"
+      style={{ width: '240px' }}
+    >
+      {/* Logo o título */}
+      <Link
+        to="/"
+        className="mb-4 fs-4 fw-bold text-decoration-none"
+        style={{ color: '#6f22d2' }}
+      >
         Inicio
       </Link>
 
-      <ul className="nav nav-pills flex-column mb-auto">
-        {links.map(({ path, label, icon }) => (
-          <li className="nav-item" key={path}>
-            <Link
-              to={path}
-              className={`nav-link d-flex align-items-center ${location.pathname === path ? 'active' : 'text-dark'}`}
-              style={{ gap: '8px' }}
-            >
-              <i className={`bi ${icon}`}></i> {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {/* Bloque scrollable para los enlaces */}
+      <div className="flex-grow-1 overflow-auto">
+        <ul className="nav nav-pills flex-column mb-0">
+          {links.map(({ path, label, icon }) => (
+            <li className="nav-item" key={path}>
+              <Link
+                to={path}
+                className={`nav-link d-flex align-items-center ${
+                  location.pathname === path ? 'active' : 'text-dark'
+                }`}
+                style={{ gap: '8px' }}
+              >
+                <i className={`bi ${icon}`}></i> {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      <div className="mt-auto pt-4">
-        <button onClick={logout} className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
+      {/* Botón de cerrar sesión siempre al pie */}
+      <div className="px-3 py-3">
+        <button
+          onClick={logout}
+          className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2"
+        >
           <i className="bi bi-box-arrow-right"></i> Cerrar sesión
         </button>
       </div>
