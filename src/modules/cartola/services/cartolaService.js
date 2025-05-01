@@ -1,9 +1,11 @@
 // src/modules/cartola/services/cartolaService.js
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL
+
 export const fetchTransacciones = async (idUsuario, limite) => {
   const { data } = await axios.get(
-    `http://localhost:8080/transacciones/${idUsuario}/ultimas?limite=${limite}`
+    `${API_URL}/transacciones/${idUsuario}/ultimas?limite=${limite}`
   );
   return data;
 };
